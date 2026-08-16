@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday, Ate! ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #e8d5ff);
+        }
+
+        .card {
+            width: 330px;
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+        }
+
+        h1 {
+            color: #c04b91;
+        }
+
+        p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        button {
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            background: #d85aa5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <img src="ate.jpg" class="photo">
+
+    <div style="font-size:45px;">🎂</div>
+
+    <h1>Happy Birthday, Ate! ❤️</h1>
+
+    <p>I made this little surprise just for you. 🌸</p>
+
+    <button onclick="openMessage()">
+        Open My Message 💌
+    </button>
+
+    <div id="message">
+
+        <h2>💗 Dear Ate 💗</h2>
+
+        <p>
+            Happy Birthday! 🎉❤️
+        </p>
+
+        <p>
+            Thank you for always supporting me,
+            especially in my studies.
+            I truly appreciate everything you do for me.
+           Your sacrifices, encouragement, and help mean so much to me.
+            I'm truly blessed to have a sister like you. I
+             promise to do my best and make you proud. I love you so much, Ate! 🥹❤️ 
+             May you have a wonderful birthday and many more blessings to come! 🎉🎂
+            </p>
+        </p>
+
+        <p>
+            You deserve all the love and happiness in the world! 🌷
+        </p>
+
+        <h2>Love you, Ate Buda! ❤️</h2>
+
+    </div>
+
+</div>
+
+<script>
+function openMessage() {
+    document.getElementById("message").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-30px";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    heart.style.zIndex = "10";
+    heart.style.pointerEvents = "none";
+
+    document.body.appendChild(heart);
+
+    let position = -30;
+
+    const animation = setInterval(function() {
+        position += 2;
+        heart.style.bottom = position + "px";
+        heart.style.opacity = 1 - (position / window.innerHeight);
+
+        if (position > window.innerHeight) {
+            clearInterval(animation);
+            heart.remove();
+        }
+    }, 20);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+}
+</script>
+
+</body>
+</html>
